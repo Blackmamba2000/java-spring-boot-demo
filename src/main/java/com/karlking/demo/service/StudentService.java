@@ -35,6 +35,7 @@ public class StudentService {
     }
 
     public int updateStudentByID(UUID student, Student studentUpdate){
+        studentUpdate.setId(student);
         return studentDao.updateStudentByID(student, studentUpdate);
     }
 
