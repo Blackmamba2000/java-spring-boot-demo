@@ -3,6 +3,7 @@ package com.karlking.demo.controller;
 import java.util.List;
 import java.util.UUID;
 
+import com.karlking.demo.exception.ApiRequestException;
 import com.karlking.demo.model.Student;
 import com.karlking.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,8 @@ public class StudentController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public List<Student> getAllStudents(){
-        return studentService.getAllStudents();
+        throw new ApiRequestException("Oops can't get all students with custom exception");
+        //return studentService.getAllStudents();
     }
 
     @RequestMapping(
@@ -59,4 +61,6 @@ public class StudentController {
     public void deleteStudentByID(@PathVariable("studentID") UUID studentID){
         studentService.deleteStudentByID(studentID);
     }
+
+
 }
