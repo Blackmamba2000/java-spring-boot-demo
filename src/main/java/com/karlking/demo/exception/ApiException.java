@@ -1,7 +1,6 @@
 package com.karlking.demo.exception;
 
 import org.springframework.http.HttpStatus;
-
 import java.time.ZonedDateTime;
 
 public class ApiException {
